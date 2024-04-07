@@ -9,10 +9,48 @@
  * 
  */
 
-#include "myList.hpp"
-#include "myHeap.hpp"
-#include "myAVLtree.hpp"
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <sstream>
+// 04/06: inclusion of header files which have not been implemented yet.
+// #include "myVector.hpp"
+// #include "myList.hpp"
+// #include "myHeap.hpp"
+// #include "myAVLtree.hpp"
 
 int main(){
+
+    std::vector<int> vector_of_test_instructions_; // set up an empty vector of integers corresponding to each instruction in the test file
+    std::ifstream inputFile("testinput.txt"); // set up the file path corresponding to the input file
+
+    // account for error in opening the test file
+    if (!inputFile.is_open()) { 
+        std::cerr << "NAWT OPEN"; 
+        return -1;
+    }
+
+    std::string line;
+    while (std::getline(inputFile, line)) {
+        std::istringstream iss(line);
+        std::string instruction;
+        iss >> instruction;
+
+        if (instruction == "insert") {
+            int number;
+            if (iss >> number) {
+                vector_of_test_instructions_.push_back(number);
+            }
+        } else { // assume the line reads "pop median"
+            vector_of_test_instructions_.push_back(-1);
+        }
+    }
+
+    // make sure the main file can actually convert the test file first.
+    for (int num : vector_of_test_instructions_) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
 
 }
