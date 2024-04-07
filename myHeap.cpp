@@ -9,3 +9,13 @@
  * 
  */
 
+#include "myHeap.hpp"
+
+void heapMedian(const std::vector<int>* instructions) {
+    // Using a max heap holding all elements <= the median and a min heap holding all elements > the median
+    
+    std::priority_queue<int> maxHeap; // for elements <= median so the median is the top popped off
+    std::priority_queue<int> minHeap; // for elements > median
+
+    
+}
