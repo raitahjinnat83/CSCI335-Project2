@@ -13,6 +13,7 @@
 #define MYLIST_HPP
 
 #include <list>
+#include <vector>
 #include <string>
 #include <iostream>
 #include <algorithm>
