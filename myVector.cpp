@@ -27,6 +27,7 @@ void vectorMedian(const std::vector<int> & instructions) {
                 current_median = result[result.size()/2]; // odd scenario
             }
             // regardless of the current median, it needs to be removed
+            std::cout << current_median << " "; // print the current median first 
             auto it_2 = find(result.begin(), result.end(), current_median); // find the current median
             result.erase(it_2); // erase the current median
         }
