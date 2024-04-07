@@ -14,39 +14,45 @@
 void heapMedian(const std::vector<int>* instructions) {
     // Using a max heap holding all elements <= the median and a min heap holding all elements > the median
     
-    std::priority_queue<int> maxHeap; // for elements <= median so the median is the top popped off
-    std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap; // for elements > median
+    std::priority_queue<int> small; // for elements <= median so the median is the top popped off
+    std::priority_queue<int, std::vector<int>, std::greater<int> > large; // for elements > median
     std::vector<int> medians; // set up empty vector of medians to print later
     int current_median;
 
     for (int num : *instructions) {
         if (num > -1) {
-            // Insert the number into the appropriate heap
-            if (maxHeap.empty() || num <= maxHeap.top()) {
-                maxHeap.push(num);
+            // Insert the number into the appropriate heap (small or large)
+            if (small.empty() || num <= small.top()) {
+                small.push(num);
             } else {
-                minHeap.push(num);
+                large.push(num);
             }
 
-            // Balance the heaps if necessary
-            if (maxHeap.size() > minHeap.size() + 1) {
-                minHeap.push(maxHeap.top());
-                current_median = maxHeap.top();
-                medians.push_back(current_median); // add current median to the vector to be printed out
-                maxHeap.pop();
-            } 
-            else if (minHeap.size() > maxHeap.size()) {
-                maxHeap.push(minHeap.top());
-                minHeap.pop();
+            // Rebalance the heaps if necessary
+            if (small.size() > large.size() + 1) {
+                large.push(small.top());
+                small.pop();
+            } else if (large.size() > small.size()) {
+                small.push(large.top());
+                large.pop();
             }
         } 
         else {
-            // Pop the current median (which is the root of maxHeap)
-            current_median = maxHeap.top();
-            medians.push_back(current_median); // add current median to the vector to be printed out
-            maxHeap.pop();
+            // The current median is the top of the small heap (max heap)
+            int current_median = small.top();
+            medians.push_back(current_median); // Store current median
+
+            // Remove the current median from the small heap
+            small.pop();
+
+            // Rebalance the heaps if necessary after removing the median
+            if (large.size() > small.size()) {
+                small.push(large.top());
+                large.pop();
+            }
         }
     }
+
     for(int mid : medians) {
         std::cout << mid << " "; // print the current medians
     }
