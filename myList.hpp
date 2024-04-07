@@ -9,3 +9,12 @@
  * 
  */
 
+#ifndef MYLIST_HPP
+#define MYLIST_HPP
+
+#include <list>
+#include <algorithm>
+
+void listMedian(const std::vector<int>* instructions);
+
+#endif
