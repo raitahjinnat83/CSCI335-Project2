@@ -9,6 +9,7 @@
  * 
  */
 
+#ifndef MYVECTOR_HPP
 #define MYVECTOR_HPP
 
 #include <vector>
