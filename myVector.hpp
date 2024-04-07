@@ -16,6 +16,6 @@
 #include <algorithm>
 #include <iostream>
 
-void vectorMedian(const std::vector<int> & instructions);
+void vectorMedian(const std::vector<int>* instructions);
 
 #endif

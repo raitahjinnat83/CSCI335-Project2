@@ -11,10 +11,10 @@
 
 #include "myVector.hpp"
 
-void vectorMedian(const std::vector<int> & instructions) {
+void vectorMedian(const std::vector<int>* instructions) {
     std::vector<int> result; // set up empty vector of results
     int current_median;
-    for(int num : instructions) {
+    for(int num : *instructions) {
         if(num > -1) { // insert instructions
             auto it = lower_bound(result.begin(), result.end(), num);
             result.insert(it, num);
