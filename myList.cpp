@@ -22,13 +22,13 @@ void listMedian(const std::vector<int>* instructions) {
         }
          else { // pop the median by printing it and removing it from the result
             auto it_med = result.begin();
-            std::advance(it_med, result.size()/2);
             if(result.size() % 2 == 0) { // even scenario
-                current_median = *std::prev(it_med);
+                std::advance(it_med, result.size()/2 - 1);
             }
             else{ // odd scenario
-                current_median = *it_med;
+                std::advance(it_med, result.size()/2);
             }
+            current_median = *it_med;
             std::cout << current_median << " "; // print current median
             result.remove(current_median);
         }
