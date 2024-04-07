@@ -13,15 +13,22 @@
 
 void vectorMedian(const std::vector<int> & instructions) {
     std::vector<int> result; // set up empty vector of results
+    int current_median;
     for(int num : instructions) {
         if(num > -1) { // insert instructions
             auto it = lower_bound(result.begin(), result.end(), num);
             result.insert(it, num);
         }
-        else { // pop the median by returning and removing it from the result
+        else { // pop the median by printing it and removing it from the result
             if(result.size() % 2 == 0) { // if the result's size is currently even
-                std::cout << result[result.size()/2 - 1] << " ";
+                current_median = result[result.size()/2 - 1];
             }
+            else {
+                current_median = result[result.size()/2]; // odd scenario
+            }
+            // regardless of the current median, it needs to be removed
+            auto it_2 = find(result.begin(), result.end(), current_median); // find the current median
+            result.erase(it_2); // erase the current median
         }
     }
 }
