@@ -14,8 +14,10 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <algorithm>
+#include <iostream>
 // 04/06: inclusion of header files which have not been implemented yet.
-// #include "myVector.hpp"
+#include "myVector.hpp"
 // #include "myList.hpp"
 // #include "myHeap.hpp"
 // #include "myAVLtree.hpp"
@@ -46,6 +48,8 @@ int main(){
             vector_of_test_instructions_.push_back(-1);
         }
     }
+
+    vectorMedian(vector_of_test_instructions_);
 
     /*
     make sure the main file can actually convert the test file first.
