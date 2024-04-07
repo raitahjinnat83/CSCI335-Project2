@@ -15,10 +15,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
-using namespace std;
 
-class myVector {
-    void vectorMedian(const std::vector<int> * instructions);
-};
+void vectorMedian(const std::vector<int>* instructions);
 
 #endif
