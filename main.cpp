@@ -16,9 +16,10 @@
 #include <sstream>
 #include <algorithm>
 #include <iostream>
+using namespace std;
 // 04/06: inclusion of header files which have not been implemented yet.
 #include "myVector.hpp"
-// #include "myList.hpp"
+#include "myList.hpp"
 // #include "myHeap.hpp"
 // #include "myAVLtree.hpp"
 
@@ -49,7 +50,8 @@ int main(){
         }
     }
 
-    vectorMedian(vector_of_test_instructions_);
+    vectorMedian(&vector_of_test_instructions_); // tested and works locally
+    listMedian(&vector_of_test_instructions_); // tested and works locally 
 
     /*
     make sure the main file can actually convert the test file first.
