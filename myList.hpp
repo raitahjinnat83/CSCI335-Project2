@@ -13,6 +13,8 @@
 #define MYLIST_HPP
 
 #include <list>
+#include <string>
+#include <iostream>
 #include <algorithm>
 
 void listMedian(const std::vector<int>* instructions);
