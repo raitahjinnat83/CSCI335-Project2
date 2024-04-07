@@ -52,7 +52,7 @@ int main(){
 
     vectorMedian(&vector_of_test_instructions_); // tested and works locally
     listMedian(&vector_of_test_instructions_); // tested and works locally
-    // heapMedian(&vector_of_test_instructions_); 
+    heapMedian(&vector_of_test_instructions_); // You got 1512.0 out of 4993 medians correct.
 
     /*
     make sure the main file can actually convert the test file first.

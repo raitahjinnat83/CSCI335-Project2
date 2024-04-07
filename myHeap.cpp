@@ -16,6 +16,8 @@ void heapMedian(const std::vector<int>* instructions) {
     
     std::priority_queue<int> maxHeap; // for elements <= median so the median is the top popped off
     std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap; // for elements > median
+    std::vector<int> medians; // set up empty vector of medians to print later
+    int current_median;
 
     for (int num : *instructions) {
         if (num > -1) {
@@ -29,16 +31,23 @@ void heapMedian(const std::vector<int>* instructions) {
             // Balance the heaps if necessary
             if (maxHeap.size() > minHeap.size() + 1) {
                 minHeap.push(maxHeap.top());
+                current_median = maxHeap.top();
+                medians.push_back(current_median); // add current median to the vector to be printed out
                 maxHeap.pop();
-            } else if (minHeap.size() > maxHeap.size()) {
+            } 
+            else if (minHeap.size() > maxHeap.size()) {
                 maxHeap.push(minHeap.top());
                 minHeap.pop();
             }
-        } else {
+        } 
+        else {
             // Pop the current median (which is the root of maxHeap)
-            int current_median = maxHeap.top();
-            std::cout << current_median << " "; // print it before popping
+            current_median = maxHeap.top();
+            medians.push_back(current_median); // add current median to the vector to be printed out
             maxHeap.pop();
         }
+    }
+    for(int mid : medians) {
+        std::cout << mid << " "; // print the current medians
     }
 }
