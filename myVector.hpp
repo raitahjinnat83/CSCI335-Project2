@@ -9,3 +9,10 @@
  * 
  */
 
+#define MYVECTOR_HPP
+
+#include <vector>
+
+class myVector {
+    void vectorMedian (const std::vector<int> * instructions);
+}
