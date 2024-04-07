@@ -33,7 +33,7 @@ void listMedian(const std::vector<int>* instructions) {
             }
             current_median = *it_med; // point to the current median from the iterator
             std::cout << current_median << " "; // print current median
-            result.erase(it_med); // remove current median
+            result.erase(it_med); // remove current median 
         }
     }
 }
