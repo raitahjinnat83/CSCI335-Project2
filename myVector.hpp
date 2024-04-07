@@ -9,10 +9,16 @@
  * 
  */
 
+#ifndef MYVECTOR_HPP
 #define MYVECTOR_HPP
 
 #include <vector>
+#include <algorithm>
+#include <iostream>
+using namespace std;
 
 class myVector {
     void vectorMedian(const std::vector<int> * instructions);
-}
+};
+
+#endif
