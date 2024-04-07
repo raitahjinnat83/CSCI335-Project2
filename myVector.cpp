@@ -19,7 +19,9 @@ void vectorMedian(const std::vector<int> & instructions) {
             result.insert(it, num);
         }
         else { // pop the median by returning and removing it from the result
-            
+            if(result.size() % 2 == 0) { // if the result's size is currently even
+                std::cout << result[result.size()/2 - 1] << " ";
+            }
         }
     }
 }
