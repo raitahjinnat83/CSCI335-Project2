@@ -13,6 +13,7 @@
 
 void vectorMedian(const std::vector<int>* instructions) {
     std::vector<int> result; // set up empty vector of results
+    std::vector<int> medians; // set up empty vector of medians to print later
     int current_median;
     for(int num : *instructions) {
         if(num > -1) { // insert number
@@ -27,9 +28,12 @@ void vectorMedian(const std::vector<int>* instructions) {
                 current_median = result[result.size()/2]; // odd scenario
             }
             // regardless of the current median, it needs to be removed
-            std::cout << current_median << " "; // print the current median first 
+            medians.push_back(current_median); // add current median to the vector to be printed out
             auto it_2 = find(result.begin(), result.end(), current_median); // find the current median
             result.erase(it_2); // erase the current median
         }
+    }
+    for(int mid : medians) {
+        std::cout << mid << " "; // print the current medians
     }
 }

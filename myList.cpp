@@ -13,6 +13,7 @@
 
 void listMedian(const std::vector<int>* instructions) {
     std::list<int> result{}; // set up empty list of results
+    std::vector<int> medians; // set up empty vector of medians to print later
     int current_median; // set up current median
 
     for (int num : *instructions) {
@@ -32,8 +33,11 @@ void listMedian(const std::vector<int>* instructions) {
                 std::advance(it_med, result.size()/2);
             }
             current_median = *it_med; // point to the current median from the iterator
-            std::cout << current_median << " "; // print current median
+            medians.push_back(current_median); // add current median to the vector to be printed out
             result.erase(it_med); // remove current median 
         }
+    }
+    for(int mid : medians) {
+        std::cout << mid << " "; // print the current medians
     }
 }
