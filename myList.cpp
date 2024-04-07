@@ -16,7 +16,7 @@ void listMedian(const std::vector<int>* instructions) {
     int current_median; // set up current median
 
     for (int num : *instructions) {
-        if(num > -1) { // insert number
+        if(num > -1) { // insert number in correct position of sorted list
             auto it = result.begin();
             while(it != result.end() && *it < num) {
                 ++it;
@@ -33,7 +33,7 @@ void listMedian(const std::vector<int>* instructions) {
             }
             current_median = *it_med; // point to the current median from the iterator
             std::cout << current_median << " "; // print current median
-            result.remove(current_median); // remove current median
+            result.erase(it_med); // remove current median
         }
     }
 }
