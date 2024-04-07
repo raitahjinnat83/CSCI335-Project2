@@ -47,10 +47,16 @@ int main(){
         }
     }
 
-    // make sure the main file can actually convert the test file first.
+    /*
+    make sure the main file can actually convert the test file first.
+    however, do not actually print the resulting vector. 
+    just pass the vector thru each of the instructions
+    
     for (int num : vector_of_test_instructions_) {
         std::cout << num << " ";
     }
     std::cout << std::endl;
+
+    */ 
 
 }
