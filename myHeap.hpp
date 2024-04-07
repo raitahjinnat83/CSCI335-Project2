@@ -16,6 +16,7 @@
 
 #include <queue>
 #include <vector>
+#include <functional>
 #include <string>
 #include <iostream>
 #include <algorithm>
