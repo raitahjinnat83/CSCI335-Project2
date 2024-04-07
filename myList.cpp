@@ -16,6 +16,21 @@ void listMedian(const std::vector<int>* instructions) {
     int current_median; // set up current median
 
     for (int num : *instructions) {
-        
+        if(num > -1) { // insert number
+            auto it = lower_bound(result.begin(), result.end(), num);
+            result.insert(it, num);
+        }
+         else { // pop the median by printing it and removing it from the result
+            auto it_med = result.begin();
+            std::advance(it_med, result.size()/2);
+            if(result.size() % 2 == 0) { // even scenario
+                current_median = *std::prev(it_med);
+            }
+            else{ // odd scenario
+                current_median = *it_med;
+            }
+            std::cout << current_median << " "; // print current median
+            result.remove(current_median);
+        }
     }
 }
