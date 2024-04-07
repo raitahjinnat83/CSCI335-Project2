@@ -11,6 +11,15 @@
 
 #include "myVector.hpp"
 
-void vectorMedian(const std::vector<int> * instructions) {
-    
+void vectorMedian(const std::vector<int> & instructions) {
+    std::vector<int> result; // set up empty vector of results
+    for(int num : instructions) {
+        if(num > -1) { // insert instructions
+            auto it = lower_bound(result.begin(), result.end(), num);
+            result.insert(it, num);
+        }
+        else { // pop the median by returning and removing it from the result
+            
+        }
+    }
 }
