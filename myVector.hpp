@@ -14,5 +14,5 @@
 #include <vector>
 
 class myVector {
-    void vectorMedian (const std::vector<int> * instructions);
+    void vectorMedian(const std::vector<int> * instructions);
 }
