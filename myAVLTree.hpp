@@ -31,7 +31,6 @@ struct AvlNode {
         : element{std::move(ele)}, left{lt}, right{rt}, height{h}, duplicates{d}, size{d} {} // move constructor
 };
 
-bool contains(const int & x, AvlNode *t);
 void insert(const int & x, AvlNode * &t);
 void remove(const int & x, AvlNode * &t);
 void balance(AvlNode * &t);
