@@ -1,7 +1,7 @@
 /**
  * @file myList.cpp
  * @author Raitah Jinnat
- * @brief 
+ * @brief containing the function void listMedian (const std::vector<int> * instructions)
  * @version 0.1
  * @date 2024-04-07
  * 
