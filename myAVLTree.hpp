@@ -30,5 +30,17 @@ struct AVLNode {
         : element{std::move(e)}, left{leftTree}, right{rightTree}, height{h} {} // move constructor
 };
 
+bool contains(const int & x, AVLNode *tree);
+void insert(const int & x, AVLNode * &tree);
+void remove(const int & x, AVLNode * &tree);
+void balance(AVLNode * &tree);
+AVLNode * findMin(AVLNode *tree);
+AVLNode * findMax(AVLNode *tree);
+int height(AVLNode *tree);
+void rotateWithLeftChild(AVLNode * & k2);
+void rotateWithRightChild(AVLNode * & k1);
+void doubleWithLeftChild(AVLNode * & k3);
+void doubleWithRightChild(AVLNode * & k1);
+void treeMedian(const vector<int> * instructions);
 
 #endif
