@@ -18,5 +18,17 @@
 #include <vector>
 using namespace std;
 
+struct AVLNode {
+    int element;
+    AVLNode *left;
+    AVLNode *right;
+    int height;
+    int duplicates;
+    AVLNode(const int & e, AVLNode *leftTree, AVLNode *rightTree, int h = 0, int d = 0)
+        : element{e}, left{leftTree}, right{rightTree}, height{h} {} // copy constructor
+    AVLNode(int && e, AVLNode *leftTree, AVLNode *rightTree, int h = 0, int d = 0)
+        : element{std::move(e)}, left{leftTree}, right{rightTree}, height{h} {} // move constructor
+};
+
 
 #endif
