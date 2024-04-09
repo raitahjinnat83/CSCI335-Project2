@@ -190,16 +190,6 @@ static const int ALLOWED_IMBALANCE = 1;
         rotateWithRightChild( k1 );
     }
 
-// void insert(const int & x, AvlNode * &t);
-// void remove(const int & x, AvlNode * &t);
-// void balance(AvlNode * &t);
-// AvlNode * findMin(AvlNode *t);
-// AvlNode * findMax(AvlNode *t);
-// int height(AvlNode *t);
-// void rotateWithLeftChild(AvlNode * & k2);
-// void rotateWithRightChild(AvlNode * & k1);
-// void doubleWithLeftChild(AvlNode * & k3);
-// void doubleWithRightChild(AvlNode * & k1);
 void treeMedian(const vector<int> * instructions);
 
 #endif
