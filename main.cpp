@@ -21,7 +21,7 @@ using namespace std;
 #include "myVector.hpp"
 #include "myList.hpp"
 #include "myHeap.hpp"
-// #include "myAVLtree.hpp"
+#include "myAVLtree.hpp"
 
 int main(){
 
@@ -50,9 +50,10 @@ int main(){
         }
     }
 
-    vectorMedian(&vector_of_test_instructions_); // tested and works locally
-    listMedian(&vector_of_test_instructions_); // tested and works locally
-    heapMedian(&vector_of_test_instructions_); // tested and works locally
+    // vectorMedian(&vector_of_test_instructions_); // tested and works locally
+    // listMedian(&vector_of_test_instructions_); // tested and works locally
+    // heapMedian(&vector_of_test_instructions_); // tested and works locally
+    treeMedian(&vector_of_test_instructions_);
 
     /*
     make sure the main file can actually convert the test file first.
