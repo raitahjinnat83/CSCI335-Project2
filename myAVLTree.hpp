@@ -18,29 +18,30 @@
 #include <vector>
 using namespace std;
 
-struct AVLNode {
+struct AvlNode {
     int element;
-    AVLNode *left;
-    AVLNode *right;
+    AvlNode *left;
+    AvlNode *right;
     int height;
     int duplicates;
-    AVLNode(const int & e, AVLNode *leftTree, AVLNode *rightTree, int h = 0, int d = 0)
-        : element{e}, left{leftTree}, right{rightTree}, height{h} {} // copy constructor
-    AVLNode(int && e, AVLNode *leftTree, AVLNode *rightTree, int h = 0, int d = 0)
-        : element{std::move(e)}, left{leftTree}, right{rightTree}, height{h} {} // move constructor
+    int size;
+    AvlNode(const int & ele, AvlNode *lt, AvlNode *rt, int h = 0, int d = 0, int s = 0)
+        : element{ele}, left{lt}, right{rt}, height{h}, duplicates{d}, size{s} {} // copy constructor
+    AvlNode(int && ele, AvlNode *lt, AvlNode *rt, int h = 0, int d = 0, int s = 0)
+        : element{std::move(ele)}, left{lt}, right{rt}, height{h}, duplicates{d}, size{d} {} // move constructor
 };
 
-bool contains(const int & x, AVLNode *tree);
-void insert(const int & x, AVLNode * &tree);
-void remove(const int & x, AVLNode * &tree);
-void balance(AVLNode * &tree);
-AVLNode * findMin(AVLNode *tree);
-AVLNode * findMax(AVLNode *tree);
-int height(AVLNode *tree);
-void rotateWithLeftChild(AVLNode * & k2);
-void rotateWithRightChild(AVLNode * & k1);
-void doubleWithLeftChild(AVLNode * & k3);
-void doubleWithRightChild(AVLNode * & k1);
+bool contains(const int & x, AvlNode *t);
+void insert(const int & x, AvlNode * &t);
+void remove(const int & x, AvlNode * &t);
+void balance(AvlNode * &t);
+AvlNode * findMin(AvlNode *t);
+AvlNode * findMax(AvlNode *t);
+int height(AvlNode *t);
+void rotateWithLeftChild(AvlNode * & k2);
+void rotateWithRightChild(AvlNode * & k1);
+void doubleWithLeftChild(AvlNode * & k3);
+void doubleWithRightChild(AvlNode * & k1);
 void treeMedian(const vector<int> * instructions);
 
 #endif
