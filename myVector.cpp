@@ -15,6 +15,8 @@ void vectorMedian(const std::vector<int>* instructions) {
     std::vector<int> result; // set up empty vector of results
     std::vector<int> medians; // set up empty vector of medians to print later
     int current_median;
+
+    // auto start = std::chrono::high_resolution_clock::now(); // start time
     for(int num : *instructions) {
         if(num > -1) { // insert number
             auto it = lower_bound(result.begin(), result.end(), num);
@@ -33,6 +35,13 @@ void vectorMedian(const std::vector<int>* instructions) {
             result.erase(it_2); // erase the current median
         }
     }
+    // auto end = std::chrono::high_resolution_clock::now(); // end time
+    
+    // std::chrono::duration<double, std::micro> elapsed = end - start; // calculate elapsed time
+
+    // // Output the execution time in microseconds
+    // std::cout << "Execution time: " << elapsed.count() << " microseconds" << std::endl;
+
     for(int mid : medians) {
         std::cout << mid << " "; // print the current medians
     }

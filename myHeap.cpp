@@ -19,6 +19,7 @@ void heapMedian(const std::vector<int>* instructions) {
     std::vector<int> medians; // set up empty vector of medians to print later
     int current_median;
 
+    // auto start = std::chrono::high_resolution_clock::now(); // start time
     for (int num : *instructions) {
         if (num > -1) {
             // Insert the number into the appropriate heap (small or large)
@@ -52,6 +53,13 @@ void heapMedian(const std::vector<int>* instructions) {
             }
         }
     }
+
+    // auto end = std::chrono::high_resolution_clock::now(); // end time
+    
+    // std::chrono::duration<double, std::micro> elapsed = end - start; // calculate elapsed time
+
+    // // Output the execution time in microseconds
+    // std::cout << "Execution time: " << elapsed.count() << " microseconds" << std::endl;
 
     for(int mid : medians) {
         std::cout << mid << " "; // print the current medians

@@ -16,6 +16,7 @@ void listMedian(const std::vector<int>* instructions) {
     std::vector<int> medians; // set up empty vector of medians to print later
     int current_median; // set up current median
 
+    // auto start = std::chrono::high_resolution_clock::now(); // start time
     for (int num : *instructions) {
         if(num > -1) { // insert number in correct position of sorted list
             auto it = result.begin();
@@ -37,6 +38,13 @@ void listMedian(const std::vector<int>* instructions) {
             result.erase(it_med); // remove current median 
         }
     }
+    // auto end = std::chrono::high_resolution_clock::now(); // end time
+    
+    // std::chrono::duration<double, std::micro> elapsed = end - start; // calculate elapsed time
+
+    // // Output the execution time in microseconds
+    // std::cout << "Execution time: " << elapsed.count() << " microseconds" << std::endl;
+
     for(int mid : medians) {
         std::cout << mid << " "; // print the current medians
     }
